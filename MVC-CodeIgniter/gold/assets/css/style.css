@@ -1,0 +1,71 @@
+body{
+	background-color: #fff;
+	margin: 40px;
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #4F5155;
+}
+h4{
+	margin: 0 0 14px 0;
+	padding: 14px 15px 10px 15px;
+}
+label{
+	padding: 10px 0;
+	width: 65px;
+}
+#header{
+	margin-left: 10px;
+}
+#header h4{
+	padding: 14px 15px 10px 0px;
+}
+.container{
+	margin: 15px 10px;
+	width: 600px !important;
+}
+.indent_left_2{
+	padding-left: 20px;
+}
+.control-group{
+	margin-bottom: 0 !important;
+}
+.controls{
+	margin-left: 200px !important;
+	width: 220px;
+}
+.alert-error, .alert-success{
+	padding: 10px;
+}
+div.forms, div.forms, div.forms, div.forms{
+	display: inline-block;
+	width: 100px;
+	background-color: #ccffff;
+	width: 200px;
+	height: 200px;
+	margin-right: 25px;
+	margin-left: 12px;
+}
+form{
+	width: 100px;
+}
+h3{
+	width: 100px;
+	margin-left: 60px;
+}
+.gold{
+	margin-left: 65px;
+	background-color: red;
+}
+.earn{
+	margin-left: 25px;
+	font-size: 16px;
+}
+#wrapper{
+    background-color: #99ccff;
+    width: 960px;
+    height: 700px;
+    margin: 0px auto;
+    padding: 10px;
+}
+.cleaning{
+    clear: both;
+}

@@ -1,0 +1,40 @@
+#container{
+	width: 900px;
+	height: 600px;
+	background-color: #d8d8d8;
+	margin: 0px auto;
+}
+.grey {
+  color: #A0A0A0;
+}
+form{
+	margin-top: 20px;
+}
+div{
+	margin-bottom: 20px;
+}
+span{
+	font-size: 24px;
+}
+legend{
+	font-size: 28px;
+}
+#button1{
+	font-size: 30px;
+	width: 200px;
+	background-color: green;
+	border: 2px solid;
+}
+.edit_task{
+	font-size: 26px;
+	background-color: #ff9966;
+	margin-right: 20px;
+}
+#checkbox{
+	margin-right: 20px;
+}
+#taskSpan{
+	color: green;
+	font-size: 20px;
+	width: 500px;
+}

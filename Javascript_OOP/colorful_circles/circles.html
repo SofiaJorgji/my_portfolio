@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>Javascript Demo - Bubbles</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<style type="text/css">
+	body {
+		background-color:black;
+	}
+	</style>
+</head>
+<body>
+
+	<svg id="svg" xmlns="http://www.w3.org/2000/svg"></svg>
+
+	<script>
+
+	//because we haven't learned how to do OOP in Javascript, we're going to just use regular functions.  Know that with OOP, there is even a better way to do this
+	var counter = 1;
+	var circles = {};
+
+	//read: http://stackoverflow.com/questions/3642035/jquerys-append-not-working-with-svg-element
+	//create an SVG element
+	function makeSVG(tag, attrs) {
+        var el= document.createElementNS('http://www.w3.org/2000/svg', tag);
+        for (var k in attrs)
+        {
+            el.setAttribute(k, attrs[k]);
+        }
+        return el;
+    }
+
+    //draws a star
+	function createCircle(cx,cy,r,clr)
+	{
+        var style="fill: rgb("+clr[0]+","+clr[1]+","+clr[2]+"); ";
+		var circle = makeSVG('circle',
+			{ cx: cx,
+			  cy: cy,
+			  r:  r,
+			  id: 'circle_'+counter,
+			  style: style
+			});
+
+		//the key will be the HTML id and the value will be the radius
+		circles['circle_'+counter] = { radius: r , myclr: clr };
+
+		counter++;
+		document.getElementById('svg').appendChild(circle);
+	}
+
+	//go through all the circles and update its radius and background color
+	function updateCircles()
+	{
+		for(das in circles)
+		{
+			var el = document.getElementById(das);
+			circles[das].radius = circles[das].radius+1;
+            var clr0=circles[das].myclr[0]-parseInt(circles[das].radius/80*circles[das].myclr[0]);
+            var clr1=circles[das].myclr[1]-parseInt(circles[das].radius/80*circles[das].myclr[1]);
+            var clr2=circles[das].myclr[2]-parseInt(circles[das].radius/80*circles[das].myclr[2]);
+            //update the radius and the background color
+			el.setAttribute("r", circles[das].radius);
+			el.setAttribute("style", "fill: rgb("+clr0+","+clr1+","+clr2+"); ");
+
+			//if the circle radius is greater than 80, remove the dom and remove its value in the circles variable/object
+			if(circles[das].radius > 80)
+			{
+				document.getElementById('svg').removeChild(el);
+				delete circles[das];
+			}
+		}
+	}
+
+	//main loop
+	function mainLoop(x,y,flag)
+    {
+        var width=document.body.clientWidth;
+        var height=document.body.clientHeight;
+        //
+        var clr=[ Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255)];
+        if(flag==1) { createCircle(Math.random()*width, Math.random()*height, 15, clr); }
+        if(flag==2) { createCircle(x, y, 15, clr); }
+    	//update the circle size and background color
+    	updateCircles();	
+    }
+    document.onclick=function(e){mainLoop(e.x,e.y,2);};
+	//execute the mainLoop funtion every 30 milliseconds
+    setInterval("mainLoop(0,0,1)", 30);
+
+	</script>
+
+</body>
+</html>

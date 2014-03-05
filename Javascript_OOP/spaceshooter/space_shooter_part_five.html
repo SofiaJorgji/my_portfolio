@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Space Shooter</title>
+		<style>
+			canvas{
+				position: absolute;
+				top: 50px;
+				left: 250px;
+				background: transparent;
+			}
+			#background{
+				z-index: -100;
+			}
+			#bg2{
+				z-index: -2;
+				opacity: 0.5;
+			}
+			#main{
+				z-index: -1;
+				opacity: 0.8;
+			}
+			#ship{
+				z-index: 0;
+			}
+			.score{
+				position: absolute;
+				top: 60px;
+				left: 950px;
+				font-size: 26px;
+				color: red;
+				font-family: cursive;
+				cursor: default;
+			}
+			.game-end{
+				position: absolute;
+				top: 300px;
+				left: 610px;
+				color: yellow;
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+				cursor: default;
+				display: none;
+			}
+			.game-over{
+				position: absolute;
+				top: 300px;
+				left: 610px;
+				color: red;
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+				cursor: default;
+				display: none;
+			}
+			.game-over span{
+				font-size: 20px;
+				cursor: pointer;
+				position: relative;
+				left: 50px;
+				color: red;
+			}
+			.game-over span:hover{
+				color: #FFD700;
+			}
+			.loading{
+				position: absolute;
+				top: 300px;
+				left: 610px;
+				color: red;
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+				cursor: default;
+			}
+			.enter{
+				position: absolute;
+				top: 300px;
+				left: 570px;
+				color: yellow;
+				font-family: cursive;
+				font-size: 30px;
+				cursor: default;
+				border-style: solid;
+				border-color: white;
+				padding: 25px 30px 25px;
+				background-color: black;
+				text-align: center;
+			}			
+			.level-up{
+				position: absolute;
+				top: 300px;
+				left: 610px;
+				color: #24D330;
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+				cursor: default;
+				display: none;
+			}	
+			.next-life{
+				position: absolute;
+				top: 330px;
+				left: 610px;
+				color: #1E90FF;
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+				cursor: default;
+				display: none;
+			}	
+			#lives{
+				position: absolute;
+				top: 3px;
+				left: 255px;
+			}
+			#ship{
+				border: 5px solid white;
+
+			}
+		
+		</style>
+	</head>
+	<body background="imgs/canva.jpg">
+		<canvas id="background" width="900" height="600">
+			Your browser does not support canvas. Please try again with a different browser.
+		</canvas>
+		<canvas id="bg2" width="900" height="600">
+			Your browser does not support canvas. Please try again with a different browser.
+		</canvas>
+		<canvas id="main" width="900" height="600">
+		</canvas>
+		<canvas id="ship" width="900" height="600">
+		</canvas>
+		<div id="lives"></div>
+		<div class="score">SCORE: <span id="score"></span></div>
+		<div class="game-over" id="game-over">GAME OVER<p><span onclick="game.restart()">Restart</span></p></div>
+		<div class="game-end" id="game-end"><p>VICTORY!!! :D</p></div>
+		<div class="level-up" id="level-up"><span id="level"></span></div>
+		<div class="next-life" id="next-life">NEXT LIFE!</div>
+		<div class="enter" id="enter">Press ENTER...<p></p></div>
+		<div class="loading" id="loading"></div>
+		<script src="space_shooter_part_five.js"></script>
+	</body>
+</html>

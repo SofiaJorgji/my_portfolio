@@ -1,0 +1,82 @@
+<html>
+<head>
+	<title>Character Game</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<div id="character" style="position:absolute; top:0px; left:0px;"><img id="ninja" src='right1.png'></div>
+	<div id="box"></div>
+
+	<script>
+
+
+	function gameLoop()
+	{
+		$('#character').css("left", x+"px");
+		$('#character').css("top", y+"px");
+        
+	}
+
+	setInterval(gameLoop, 150);
+
+	var x=0, y=0;
+    var rc=0,lc=0,tc=0,dc=0;
+    var ri=["right1.png","right2.png"];
+    var li=["left1.png","left2.png"];
+    var ti=["top1.png","top2.png"];
+    var di=["down1.png","down2.png"];
+    
+	document.onkeydown = function(e)
+	{
+		if(e.keyCode == 37)
+		{
+            if(lc==0) {
+	            document.getElementById("ninja").src=li[1]; 
+	            lc++;
+            }
+            else if (lc==1) { 
+            	document.getElementById("ninja").src=li[0]; 
+            	lc--;
+            }
+			x = x-10;
+			if(x < 0){
+				x = 0;
+			}
+		}
+		else if(e.keyCode == 39)
+		{
+			x = x+10;
+            if(rc==0) { document.getElementById("ninja").src=ri[1]; rc++;}
+            else if (rc==1) { document.getElementById("ninja").src=ri[0]; rc--;}
+			if(x > 440){
+				x = 440;
+			}
+		}
+		if(e.keyCode == 38)
+		{
+            if(tc==0) { document.getElementById("ninja").src=ti[1]; tc++;}
+            else if (tc==1) { document.getElementById("ninja").src=ti[0]; tc--;}
+			y = y-10;
+			if(y < 0){
+				y = 0;
+			}
+		}
+		else if(e.keyCode == 40)
+		{
+            if(dc==0) { document.getElementById("ninja").src=di[1]; dc++;}
+            else if (dc==1) { document.getElementById("ninja").src=di[0]; dc--;}
+            y = y+10;
+			if(y > 410){
+				y = 410;
+			}
+		}
+		console.log(e.keyCode, x);
+		console.log(e.keyCode, y);
+	}
+
+	console.log(document);
+	</script>
+
+</body>
+</html>

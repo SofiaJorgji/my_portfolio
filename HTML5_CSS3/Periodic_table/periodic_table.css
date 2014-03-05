@@ -1,0 +1,104 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: sans-serif;
+	text-align: center;
+	margin: 0px auto;
+} 
+ul{
+	list-style: none;
+	float: left;
+}
+ul li{
+	height: 41px;
+	width: 41px;
+	border: 1px solid gray;
+	margin: 1px;
+}
+.clear{
+	clear: both;
+}
+.container{
+	width: 900px;
+	overflow: auto;
+	background-color: #ccffff;
+}
+#title{
+	font-size: 28px;
+	margin: 10px;
+	color: red;
+}
+#first_column{
+	float: left;
+}
+#first_line, #first_column, #rare_earths{
+	color: red;
+}
+#first_line li, #first_column li{
+	height: 23px;
+	width: 23px;
+	border: none;
+	padding: 10px;
+}
+h1{
+	font-size: 16px;
+}
+#first_line li{
+	display: inline;
+	float: left;
+}
+.left li{
+	background-color: #33ccff;
+}
+.left h1{
+	color: #0000cc;
+}
+.middle{
+	margin-top: 132px;
+}
+.middle li{
+	background-color: #ffcccc;
+}
+.middle h1{
+	color: #0000cc;
+}
+.right{
+	margin-top: 44px;
+}
+.right li{
+	background-color: yellow;
+}
+.right h1{
+	color: #0000cc;
+}
+.bottom{
+	margin-left: 0px;
+}
+.bottom li{
+	background-color: #009900;
+	display: inline;
+	float: left;
+}
+.bottom h1{
+	color: #0000cc;
+}
+.left li, .bottom li, .right li, .middle li{
+	font-size: 9px;
+}
+#second_column{
+	margin-top: 44px;
+}
+#in_middle,#columns{
+	margin-left: 12px;
+}
+#gap_bottom, #rare_earths{
+	margin-top: 20px;
+}
+#last_column{
+	margin-top: 0px;
+}
+#rare_earths li{
+	padding-top: 10px;
+	width: 145px;
+	border: none;
+}

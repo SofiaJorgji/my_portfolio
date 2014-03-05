@@ -1,0 +1,15 @@
+#wrapper{
+	margin: 0px auto;
+	width: 700px;
+	margin-top: 100px;
+}
+td{
+	width:40px;
+	height:40px;
+}
+table{
+	border-collapse: collapse;
+}
+h1, h2{
+	display: inline-block;
+}

@@ -1,0 +1,52 @@
+#container{
+	background-color: #ccff99;
+	width: 900px;
+	height: 600px;
+	margin: 0px auto;
+	margin-top: 30px;
+}
+label{
+	font-size: 26px;
+	margin-right: 10px;
+}
+#category{
+	margin-right: 65px;
+}
+.categ{
+	font-size: 30px;
+}
+#description{
+	margin-right: 50px;
+	vertical-align: top;
+}
+select{
+	margin-bottom: 80px;
+	width: 250px;
+	height: 50px;
+	background-color: #ccffff;
+}
+#product_name{
+	margin-bottom: 30px;
+	font-size: 24px;
+}
+textarea{
+	font-size: 22px;
+}
+table{
+	width: 500px;
+	background-color: #669900;
+}
+th{
+	font-size: 24px;
+}
+td{
+	font-size: 20px;
+	padding-left: 20px;
+}
+#add{
+	margin-left: 380px;
+	margin-top: 30px;
+	width: 80px;
+	font-size: 24px;
+	background-color: #cc0033;
+}

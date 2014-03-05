@@ -1,0 +1,148 @@
+* {
+	font-family: sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+#container{
+	width: 1000px;
+	height: 750px;
+	margin: 0px auto;
+}
+body{
+	background-color: white;
+}
+header{
+	width: 1010px;
+	height: 150px;
+	background-color: #f0f0f0;
+	margin-top: 15px;
+}
+header img, h2{
+	display: inline-block;
+}
+header h2{
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 250px;
+	margin-top: 20px;
+}
+#nav{
+	height: 30px;
+	background: #d8d8d8;
+	margin-top: 20px;
+	padding: 10px 0px 0px 10px;
+	border-top: 1px solid gray;
+}
+#nav a{
+	text-decoration: none;
+	color: gray;
+}
+#nav li{
+	display: inline;
+}
+#nav li a{
+	border: 1px solid;
+	padding: 10px;
+	margin: 0px;
+	border-bottom: none;
+}
+#big_box{
+	width: 1010px;
+	height: 590px;
+	background-color: black;
+}
+#top_row{
+	padding-top: 0px;
+	width: 1010px;
+	height: 265px;
+}
+#top_row img{
+	padding-top: 10px;
+	display: inline-block;
+	margin-left: 25px;
+}
+#right_column{
+	width: 550px;
+	height: 255px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+#right_column h2{
+	width: 545px;
+	height: 25px;
+	background-color: yellow;
+	font-size: 18px;
+	vertical-align: top;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+#lubricants{
+	width: 555px;
+	height: 230px;
+	background-color: gray;
+}
+#lubricants h3{
+	color: white;
+	display:inline-block;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 16px;
+}
+#lubricants p{
+	color: white;
+	margin: 20px 10px 0px 10px;
+	font-size: 12px;
+}
+#lubricants span{
+	font-weight: bold;
+}
+#bulk_delivery{
+	width: 1010px;
+	height: 35px;
+}
+#bulk_delivery img{
+	margin-left: 40px;
+	margin-top: 20px;
+}
+#bulk_delivery p{
+	display: inline-block;
+	color: orange;
+	font-size: 12px;
+	margin-left: 5px;
+	margin-top: 20px;
+}
+#bottom{
+	height: 295px;
+}
+#bottom a{
+	font-size: 13px;
+	font-weight: bold;
+	width: 90px;
+	margin-left: 110px;
+	background-color: #FACF5F;
+	text-decoration: none;
+	color: black;
+	border: 3px solid black;	
+}
+.box{
+	width: 225px;
+	height: 265px;
+	display: inline-block;
+	background-color: white;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.box h3{
+	height: 20px;
+	background-color: yellow;
+	padding: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+}
+.box p{
+	font-size: 13px;
+	padding: 0px 10px;
+	height: 100px;
+}
