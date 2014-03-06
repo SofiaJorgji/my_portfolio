@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="/CI/friendfinder/assets/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="/CI/friendfinder/assets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 	<title>Login-Registration</title>
 </head>
 <body>
@@ -15,7 +15,6 @@
 		echo "<div class='container'><div class='alert-error'><p>". $error_message ."</p></div></div>";
 	}
 ?>
-
 	<div class="container">
 		<h4>Log In</h4>
 		<form action="" method="post" class="form-horizontal">		
