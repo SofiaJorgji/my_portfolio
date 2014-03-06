@@ -2,11 +2,11 @@
 
 function to_ninja($name)
 {
-	$map =[
+	$map =array(
 	"A" => "ka","B"=>"tu","C"=>"mi","D"=>"te","E"=>"ku","F"=>"lu","G"=>"ji","H"=>"ri",
 	"I"=>"ki","J"=>"zu","K"=>"me","L"=>"ta","M"=>"rin","N"=>"to","O"=>"mo","P"=>"no",
 	"Q"=>"ke","R"=>"shi","S"=>"ari","T"=>"chi","U"=>"do","V"=>"ru","W"=>"mei","X"=>"na",
-	"Y"=>"fu","Z"=>"zi"," "=>" "];
+	"Y"=>"fu","Z"=>"zi"," "=>" ");
 
 	$ninja="";
 	$arr = str_split(strtoupper($name));
