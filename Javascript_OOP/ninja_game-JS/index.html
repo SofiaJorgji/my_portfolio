@@ -28,12 +28,14 @@
 	{
 		if(e.keyCode == 37)
 		{
-            if(lc == 0) {
-	            document.getElementById("ninja").src=li[1]; 
+            if(lc == 0) 
+            {
+	            document.getElementById("ninja").src = li[1]; 
 	            lc++;
             }
-            else if (lc == 1) { 
-            	document.getElementById("ninja").src=li[0]; 
+            else if(lc == 1) 
+            { 
+            	document.getElementById("ninja").src = li[0]; 
             	lc--;
             }
 			x = x - 10;
@@ -96,10 +98,7 @@
 				y = 410;
 			}
 		}
-		console.log(e.keyCode, x);
-		console.log(e.keyCode, y);
 	}
-	console.log(document);
 	</script>
 </body>
 </html>
