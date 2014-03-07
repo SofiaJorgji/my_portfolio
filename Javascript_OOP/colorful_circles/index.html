@@ -4,10 +4,10 @@
 	<title>Bubbles</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<style type="text/css">
-	body {
-		background-color:black;
-	}
-	</style>
+		body{
+			background-color:black;
+		}
+		</style>
 </head>
 <body>
 	<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"></svg>
@@ -15,7 +15,7 @@
 	var counter = 1;
 	var circles = {};
 	function makeSVG(tag, attrs) {
-        var el= document.createElementNS('http://www.w3.org/2000/svg', tag);
+        var el = document.createElementNS('http://www.w3.org/2000/svg', tag);
         for (var k in attrs)
         {
             el.setAttribute(k, attrs[k]);
@@ -39,19 +39,19 @@
 	}
 	function updateCircles()
 	{
-		for(das in circles)
+		for(prop in circles)
 		{
-			var el = document.getElementById(das);
-			circles[das].radius = circles[das].radius+1;
-            var clr0=circles[das].myclr[0]-parseInt(circles[das].radius/80*circles[das].myclr[0]);
-            var clr1=circles[das].myclr[1]-parseInt(circles[das].radius/80*circles[das].myclr[1]);
-            var clr2=circles[das].myclr[2]-parseInt(circles[das].radius/80*circles[das].myclr[2]);
-			el.setAttribute("r", circles[das].radius);
+			var el = document.getElementById(prop);
+			circles[prop].radius = circles[prop].radius+1;
+            var clr0=circles[prop].myclr[0]-parseInt(circles[prop].radius/80*circles[prop].myclr[0]);
+            var clr1=circles[prop].myclr[1]-parseInt(circles[prop].radius/80*circles[prop].myclr[1]);
+            var clr2=circles[prop].myclr[2]-parseInt(circles[prop].radius/80*circles[prop].myclr[2]);
+			el.setAttribute("r", circles[prop].radius);
 			el.setAttribute("style", "fill: rgb("+clr0+","+clr1+","+clr2+"); ");
-			if(circles[das].radius > 80)
+			if(circles[prop].radius > 80)
 			{
 				document.getElementById('svg').removeChild(el);
-				delete circles[das];
+				delete circles[prop];
 			}
 		}
 	}
