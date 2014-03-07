@@ -9,11 +9,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>New Products</title>
-		<link rel="stylesheet" href="/aa/portfolio/Ajax_OOP/red_belt_exam/ajax.css">
+		<link rel="stylesheet" href="ajax.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-		<style type="text/css">
-			
-		</style>
 		<script>
 			$(document).ready(function() 
 			{

@@ -2,7 +2,6 @@
 	session_start();
 	require_once("connection.php");
 ?>
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -79,7 +78,8 @@
 							<select name="st_id">
 								<option value=""></option>
 								<?php 
-								$query = "SELECT id, CONCAT_WS(' ', first_name, last_name) AS full_name FROM students";
+								$query = "SELECT id, CONCAT_WS(' ', first_name, last_name) AS full_name 
+										  FROM students";
 								$result = mysqli_query($connection, $query);
 								while($row = mysqli_fetch_assoc($result))
 								{ 
@@ -145,7 +145,7 @@
 								<?php
 								for($i = 1; $i < 101; $i++)
 								{ ?>
-									<option value="<?=$i; ?>"><?=$i; ?> </option>
+									<option value="<?=$i; ?>"><?=$i; ?></option>
 									<?php
 								} ?>
 							</select><br>
@@ -156,7 +156,6 @@
 						</div>
 					</form>			
 				</div>
-
 				<?php
 			} ?>	
 		</div>
@@ -165,5 +164,4 @@
 
 <?php
 $_SESSION = array();
-//unset($_SESSION);
 ?>

@@ -1,8 +1,6 @@
 <?php
 	session_start();
 	require_once("connection.php");
-	// var_dump($_POST);
-
 	if(isset($_POST['action']) && $_POST['action'] == 'show_exam')
 	{
 		if(!empty($_POST['st_id']))
@@ -14,10 +12,8 @@
 			$_SESSION['error']['show_exam'] = "Please select a student";
 		}
 	}
-	
 	if(isset($_POST['action']) && $_POST['action'] == 'record')
 	{
-		// var_dump($_POST);
 		$_SESSION['row_id'] = $_POST['stud_id'];
 		foreach ($_POST as $key => $value) 
 		{
@@ -39,7 +35,6 @@
 			$rid = $_SESSION['row_id'];
 			$query = "INSERT INTO exams (subject, grade, note, status, students_id, created_at, updated_at)
 					  VALUES ('".$_POST['subj']."', '".$_POST['grad']."', '".$_POST['note']."', '".$status."', ".$rid.",NOW(),NOW())";
-					  //echo $query;
 			mysqli_query($connection, $query);
 		}
 	}
