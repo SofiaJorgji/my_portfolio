@@ -5,19 +5,16 @@
 	<link rel="stylesheet" href="index.css">
 </head>
 <body>
-	<div id="character" style="position:absolute; top:0px; left:0px;"><img id="ninja" src='right1.png'></div>
+	<div id="character" style="position:absolute; top:0px; left:0px;">
+		<img id="ninja" src='right1.png'>
+	</div>
 	<div id="box"></div>
-
 	<script>
-
-
 	function gameLoop()
 	{
 		$('#character').css("left", x+"px");
-		$('#character').css("top", y+"px");
-        
+		$('#character').css("top", y+"px");        
 	}
-
 	setInterval(gameLoop, 150);
 
 	var x=0, y=0;
@@ -74,9 +71,7 @@
 		console.log(e.keyCode, x);
 		console.log(e.keyCode, y);
 	}
-
 	console.log(document);
 	</script>
-
 </body>
 </html>
