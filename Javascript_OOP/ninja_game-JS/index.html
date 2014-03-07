@@ -45,8 +45,16 @@
 		else if(e.keyCode == 39)
 		{
 			x = x + 10;
-            if(rc == 0) { document.getElementById("ninja").src=ri[1]; rc++;}
-            else if (rc == 1) { document.getElementById("ninja").src=ri[0]; rc--;}
+            if(rc == 0) 
+            	{ 
+            		document.getElementById("ninja").src = ri[1]; 
+            		rc++;
+            	}
+            else if(rc == 1) 
+            	{ 
+            		document.getElementById("ninja").src=ri[0]; 
+            		rc--;
+            	}
 			if(x > 440)
 			{
 				x = 440;
@@ -56,12 +64,12 @@
 		{
             if(tc == 0) 
             { 
-            	document.getElementById("ninja").src=ti[1]; 
+            	document.getElementById("ninja").src = ti[1]; 
             	tc++;
             }
             else if (tc == 1) 
             { 
-            	document.getElementById("ninja").src=ti[0]; 
+            	document.getElementById("ninja").src = ti[0]; 
             	tc--;
             }
 			y = y - 10;
@@ -74,12 +82,12 @@
 		{
             if(dc == 0) 
             { 
-            	document.getElementById("ninja").src=di[1]; 
+            	document.getElementById("ninja").src = di[1]; 
             	dc++;
             }
             else if(dc == 1) 
             	{ 
-            		document.getElementById("ninja").src=di[0]; 
+            		document.getElementById("ninja").src = di[0]; 
             		dc--;
             	}
             y = y + 10;
