@@ -32,7 +32,7 @@
 					return false;
 				});
 				$('html').on("click",'a.delete_button',function(){
-					var form=$(this).closest('form');
+					var form = $(this).closest('form');
 					$.post(form.attr("action"), 
 						form.serialize(), 
 						function(data)
@@ -70,7 +70,7 @@
 						<?php
 						} 	?>
 					</select>
-					<div>	
+					<div>
 						<label id="description">Description</label>
 						<textarea name="prod_desc" rows="3"></textarea><br>
 						<input id="add" type="submit" value="Add">
@@ -98,9 +98,9 @@
 								<td><?=$row['prod_name']; ?></td>
 								<td><?=$row['category_name']; ?></td>
 								<td><?=$row['prod_description']; ?></td>
-								<td class="del" >
+								<td class="del">
 									<form class="delete_prod" action="process.php" method="post">
-										<a href="" class="delete_button"> delete </a>
+										<a href="" class="delete_button">delete</a>
 										<input type="hidden" name="delete_prod" value="<?=$row['prod_id']; ?>">
 									</form>
 								</td>

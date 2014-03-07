@@ -40,7 +40,7 @@ class Catalog
 		$query = "UPDATE products SET name = '". $name ."', description = '". $description ."', updated_at = NOW()
 				  WHERE id = '". $prod_id ."'";
 		$result = mysqli_query($this->db->connection, $query);
-		return $result ;
+		return $result;
 	}
 
 	public function delete_prod($prod_id)
@@ -55,7 +55,7 @@ class Catalog
 		$query = "SELECT category_name FROM categories 
 				  WHERE id = ".$cat_id;
 		$result = $this->db->fetch_all($query);
-		return $result;					
+		return $result;
 	}
 }
 

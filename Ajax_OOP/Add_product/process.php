@@ -42,5 +42,4 @@
 		$result = $cat->delete_prod($_POST['delete_prod']);
 		echo json_encode($data);
 	}
-
 ?>
