@@ -14,7 +14,7 @@
 	<script>
 	var counter = 1;
 	var circles = {};
-	function makeSVG(tag, attrs) {
+	function makeSVG(tag, attrs){
         var el = document.createElementNS('http://www.w3.org/2000/svg', tag);
         for (var k in attrs)
         {
@@ -42,10 +42,10 @@
 		for(prop in circles)
 		{
 			var el = document.getElementById(prop);
-			circles[prop].radius = circles[prop].radius+1;
-            var clr0=circles[prop].myclr[0]-parseInt(circles[prop].radius/80*circles[prop].myclr[0]);
-            var clr1=circles[prop].myclr[1]-parseInt(circles[prop].radius/80*circles[prop].myclr[1]);
-            var clr2=circles[prop].myclr[2]-parseInt(circles[prop].radius/80*circles[prop].myclr[2]);
+			circles[prop].radius = circles[prop].radius + 1;
+            var clr0 = circles[prop].myclr[0] - parseInt(circles[prop].radius / 80 * circles[prop].myclr[0]);
+            var clr1 = circles[prop].myclr[1] - parseInt(circles[prop].radius / 80 * circles[prop].myclr[1]);
+            var clr2 = circles[prop].myclr[2] - parseInt(circles[prop].radius / 80 * circles[prop].myclr[2]);
 			el.setAttribute("r", circles[prop].radius);
 			el.setAttribute("style", "fill: rgb("+clr0+","+clr1+","+clr2+"); ");
 			if(circles[prop].radius > 80)
@@ -57,14 +57,14 @@
 	}
 	function mainLoop(x,y,flag)
     {
-        var width=document.body.clientWidth;
-        var height=document.body.clientHeight;
-        var clr=[ Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255)];
-        if(flag==1) { createCircle(Math.random()*width, Math.random()*height, 15, clr); }
-        if(flag==2) {createCircle(x, y, 15, clr); }
+        var width = document.body.clientWidth;
+        var height = document.body.clientHeight;
+        var clr = [ Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255)];
+        if(flag == 1) { createCircle(Math.random()*width, Math.random()*height, 15, clr); }
+        if(flag == 2) {createCircle(x, y, 15, clr); }
     	updateCircles();	
     }
-    document.onclick=function(e){mainLoop(e.clientX,e.clientY,2);};
+    document.onclick = function(e){mainLoop(e.clientX,e.clientY,2);};
     setInterval("mainLoop(0,0,1)", 30);
 	</script>
 </body>
