@@ -15,47 +15,49 @@
 				$("#add_note").on("submit", function()
 				{
 					var form = $(this);
-					$.post(form.attr("action"), form.serialize(), function(data)
-					{
-						if(data.status)
+					$.post(form.attr("action"), 
+						form.serialize(), 
+						function(data)
 						{
-							$(data.note).appendTo("#notes").hide().fadeIn();
-							form.find(".note_description").html(data.note);
-						}
-						else
-						{
-							alert(data.message);
-						}
-					}, "json");
+							if(data.status)
+							{
+								$(data.note).appendTo("#notes").fadeIn();
+								form.find(".note_description").html(data.note);
+							}
+							else
+							{
+								alert(data.message);
+							}
+						}, "json");
 					return false;
 				});
 
 				$("#notes").on("submit", "form.edit_note", function()
 				{
 					var form = $(this);
-					
-					$.post(form.attr("action"), form.serialize(), function(data)
-					{
-						if(data.status)
+					$.post(form.attr("action"), 
+						form.serialize(), 
+						function(data)
 						{
-							if(! data.description_is_empty)
+							if(data.status)
 							{
-								form.find(".note_description").html(data.note);
+								if(!data.description_is_empty)
+								{
+									form.find(".note_description").html(data.note);
+								}
 							}
-						}
-						else
-						{
-							alert(data.message);
-						}
-					}, "json");
+							else
+							{
+								alert(data.message);
+							}
+						}, "json");
 
 					return false;
 				});
 
 				$("#notes").on("click", ".note_description p", function(event)
 				{
-					var edit_button = $(this);
-					var form = edit_button.closest("form");
+					var form = $(this).closest("form");
 					var note_id = form.find("input[name='note_id']").val();
 					var edit_form = "<div class='control-group'>\n"+
 										"<textarea name='description' placeholder='Please enter your description...'>"+ form.find(".note_description p").text() +"</textarea>\n"+
@@ -63,13 +65,12 @@
 									"<input type='submit' value='Save' class='btn btn-success btn-mini'>";
 
 					form.find(".note_description").html(edit_form);
-
-					event.preventDefault();
+					return false;
 				});
 
-				$("#notes").on("click", ".delete_note button", function(event)
+				$("#notes").on("click", ".delete_note button", function()
 				{
-					var form = $(this).parent();
+					var form = $(this).closest('form');
 					
 					if(confirm("Are you sure you want to delete this note?"))
 					{
@@ -85,8 +86,7 @@
 							}
 						}, "json");
 					}
-					
-					event.preventDefault();
+					return false;
 				});
 			});
 		</script>
@@ -111,20 +111,20 @@
 				{	?>
 					<div class="row-fluid">
 						<div class="offset3 span6 offset3 well">
-							<h3 class="pull-left"><?php=$note['title']; ?></h3>
+							<h3 class="pull-left"><?=$note['title']; ?></h3>
 							<form class="delete_note" action="process.php" method="post">
 								<button class="btn btn-link pull-right">delete</button>
 								<input type="hidden" name="action" value="delete">
-								<input type="hidden" name="note_id" value="<?php=$note['id']; ?>">
+								<input type="hidden" name="note_id" value="<?=$note['id']; ?>">
 							</form>
 							<div class="clearfix"></div>
 							<form action="process.php" method="post" class="edit_note form-horizontal">
 	<?php 					if($note['description'] != NULL)
 							{	?>
 								<div class="note_description">
-									<p><?php=$note['description']; ?></p>
+									<p><?=$note['description']; ?></p>
 								</div>
-								<input type="hidden" name="note_id" value="<?php=$note['id']; ?>">
+								<input type="hidden" name="note_id" value="<?=$note['id']; ?>">
 	<?php 					}
 							else
 							{	?>
@@ -133,7 +133,7 @@
 										<textarea name="description" placeholder="Please enter your description..."></textarea>
 									</div>
 								</div>
-								<input type="hidden" name="note_id" value="<?php=$note['id']; ?>">
+								<input type="hidden" name="note_id" value="<?=$note['id']; ?>">
 								<input type="submit" value="Save" class="btn btn-success btn-mini">
 	<?php 					}	?>						
 							</form>
