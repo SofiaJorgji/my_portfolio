@@ -5,7 +5,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Ajax Advanced</title>
+		<title>Notes</title>
 		<link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css">
 		<link rel="stylesheet" href="style.css">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -111,20 +111,20 @@
 				{	?>
 					<div class="row-fluid">
 						<div class="offset3 span6 offset3 well">
-							<h3 class="pull-left"><?php echo $note['title']; ?></h3>
+							<h3 class="pull-left"><?php=$note['title']; ?></h3>
 							<form class="delete_note" action="process.php" method="post">
 								<button class="btn btn-link pull-right">delete</button>
 								<input type="hidden" name="action" value="delete">
-								<input type="hidden" name="note_id" value="<?php echo $note['id']; ?>">
+								<input type="hidden" name="note_id" value="<?php=$note['id']; ?>">
 							</form>
 							<div class="clearfix"></div>
 							<form action="process.php" method="post" class="edit_note form-horizontal">
 	<?php 					if($note['description'] != NULL)
 							{	?>
 								<div class="note_description">
-									<p><?php echo $note['description']; ?></p>
+									<p><?php=$note['description']; ?></p>
 								</div>
-								<input type="hidden" name="note_id" value="<?php echo $note['id']; ?>">
+								<input type="hidden" name="note_id" value="<?php=$note['id']; ?>">
 	<?php 					}
 							else
 							{	?>
@@ -133,7 +133,7 @@
 										<textarea name="description" placeholder="Please enter your description..."></textarea>
 									</div>
 								</div>
-								<input type="hidden" name="note_id" value="<?php echo $note['id']; ?>">
+								<input type="hidden" name="note_id" value="<?php=$note['id']; ?>">
 								<input type="submit" value="Save" class="btn btn-success btn-mini">
 	<?php 					}	?>						
 							</form>
