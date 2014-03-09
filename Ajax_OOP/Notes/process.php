@@ -8,7 +8,6 @@
 		{
 			$query = "INSERT INTO posts (title, created_at)
 						VALUES('". mysqli_real_escape_string($connection, $_POST['title']) ."', NOW())";
-						// echo $query;
 
 			$result = mysqli_query($connection, $query);
 

@@ -20,7 +20,6 @@
 						if(data.status)
 						{
 							$(data.note).appendTo("#notes").hide().fadeIn();
-							// $(data.note).appendTo("#notes").hide();
 							form.find(".note_description").html(data.note);
 						}
 						else
@@ -91,7 +90,6 @@
 				});
 			});
 		</script>
-		<!-- END OF JQUERY SCRIPTS -->
 	</head>
 	<body>
 		<div class="container-fluid">
