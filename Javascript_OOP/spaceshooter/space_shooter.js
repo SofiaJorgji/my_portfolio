@@ -4,7 +4,7 @@ function init() {
 	game.init();
 }
 
-var imageRepository = new function() {
+var imageRepository = new function(){
 	this.background = new Image();
 	this.bg2 = new Image();
 	this.spaceship = new Image();
@@ -126,11 +126,11 @@ function Bullet(object)
 		{
 			return true;
 		}
-		else if(self === "bullet" && this.y <= 0 - this.height) 
+		else if(self === "bullet" && this.y <= 0 - this.height)
 		{
 			return true;
 		}
-		else if(self === "enemyBullet" && this.y >= this.canvasHeight) 
+		else if(self === "enemyBullet" && this.y >= this.canvasHeight)
 		{
 			return true;
 		}
@@ -475,8 +475,8 @@ function Boss() {
 		}
 	};
 	this.fire = function() {
-		this.bulletspeed= -2.5 - 0.25 * (game.level - 1);
-		this.bulletPool.getThree(this.x + 3, this.y + 170, -this.speed, this.bulletspeed,
+		this.bulletspeed = -2.5 - 0.25 * (game.level - 1);
+		this.bulletPool.getThree(this.x + 3, this.y + 170, - this.speed, this.bulletspeed,
 		this.x + this.width / 2, this.y + this.height, 0, this.bulletspeed,
 		this.x + this.width * (3/4) + 25, this.y + this.height/2 + 20 , this.speed, this.bulletspeed);
 	};
@@ -519,7 +519,7 @@ function Ship()
 					this.x = 0;
 					this.xspeed=0;
 				}
-				this.xspeed = -this.speed ;
+				this.xspeed = -this.speed;
 			} 
 			else if (KEY_STATUS.right) 
 			{
@@ -571,7 +571,9 @@ function Ship()
         { 
         	clearTimeout(game.anim);
         	this.context.drawImage(imageRepository.shipexp, this.x, this.y);
-            window.setTimeout(function(){game.restart("continue");},1000); 
+            window.setTimeout(function(){
+            	game.restart("continue");
+            },1000); 
         }
     };
 	this.fire = function() {
@@ -600,8 +602,8 @@ function Enemy() {
 		this.rightEdge = this.x + 80;
 		this.bottomEdge = this.y + 300 + this.height;
 		this.topEdge = this.y + this.height;
-		this.phi=45;
-		this.r=0;
+		this.phi = 45;
+		this.r = 0;
 		if(game.level >= 3)
 		{
 			if(this.x < 410)
@@ -632,11 +634,11 @@ function Enemy() {
 		{
 			if (this.y >= this.bottomEdge)
 			{
-				this.speedY = -this.speed ;
+				this.speedY = -this.speed;
 			}
 			else if(this.y <= this.topEdge)
 			{
-				this.speedY = this.speed ;
+				this.speedY = this.speed;
 			}
 		}
 		else
@@ -665,7 +667,7 @@ function Enemy() {
 				{
 					this.x = this.rightEdge;
 				}
-				else if (this.x > this.rightEdge + this.width) 
+				else if (this.x > this.rightEdge + this.width)
 				{
 					this.x = this.leftEdge - this.width + 1;
 				}
@@ -869,11 +871,11 @@ function Game() {
 			this.level = 1;			
 			this.playerScore = 0;
 			this.playerLives = 3;
-			for(var i = 1, lives = ""; i <= this.playerLives; i++) 
+			for(var i = 1, lives = ""; i <= this.playerLives; i++)
 			{
           		lives += '<img src="imgs/live.jpg" />';
         	}
-        	document.getElementById('lives').innerHTML = lives;	
+        	document.getElementById('lives').innerHTML = lives;
 
         	this.enemyPool.init("enemy");
 			this.spawnWave('restart');
