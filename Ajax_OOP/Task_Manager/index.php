@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Task Manager</title>
-		<link rel="stylesheet" href="/my_portfolio/github_portfolio/Ajax_OOP/Task_Manager/style.css">
+		<link rel="stylesheet" href="style.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script>
 			$(document).ready(function() 
