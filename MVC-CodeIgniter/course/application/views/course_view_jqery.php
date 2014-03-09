@@ -10,19 +10,19 @@
 		$(document).ready(function() 
 		{
 			$('html').on("click",'a.edit_form',function(){
-				var link=$(this);
-				var form=$(this).closest('form');
-				var mytd=link.parent();
-				var name1=mytd.siblings('.name1').children('p');
-				var nam=name1.html();
-				name1.replaceWith( "<textarea name='course_name'>"+nam+"</textarea>" );
-				var desc1=mytd.siblings('.desc1').children('p');
-				var des=desc1.html();
-				desc1.replaceWith( "<textarea name='description'>"+des+"</textarea>" );
+				var link = $(this);
+				var form = $(this).closest('form');
+				var mytd = link.parent();
+				var name1 = mytd.siblings('.name1').children('p');
+				var nam = name1.html();
+				name1.replaceWith( "<textarea name='course_name'>"+ nam +"</textarea>" );
+				var desc1 = mytd.siblings('.desc1').children('p');
+				var des = desc1.html();
+				desc1.replaceWith( "<textarea name='description'>"+ des +"</textarea>" );
 				link.replaceWith("<a href='#' class='save_edit'>Save</a>");
 			});
 			$('html').on("click",'a.save_edit',function(){
-				var form=$(this).closest('form');
+				var form = $(this).closest('form');
 				form.submit();
 			});			
 		});
@@ -66,10 +66,10 @@
 					    			<input type="hidden" name="update_rec" value="<?= $object->id ;?>"/>
 								</form>
 								<td class="remove">
-									<form id="b<?= $object->id ; ?>" action="" method="post">
+									<form id="b<?= $object->id; ?>" action="" method="post">
 										<input type="hidden" name="delete_form" value="remove">
-				    					<a href="#" onclick="document.getElementById('b<?= $object->id ; ?>').submit();">Remove</a>
-				    					<input type="hidden" name="remove_rec" value="<?= $object->id ;?>"/>
+				    					<a href="#" onclick="document.getElementById('b<?= $object->id; ?>').submit();">Remove</a>
+				    					<input type="hidden" name="remove_rec" value="<?= $object->id;?>"/>
 									</form>
 								</td>	
 							</tr>								

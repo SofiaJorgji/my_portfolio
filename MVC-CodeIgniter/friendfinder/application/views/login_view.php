@@ -48,7 +48,6 @@
 			echo "<div class='container'><div class='alert alert-success'><p>". $success_message ."</p></div></div>";
 	}
 ?>
-
 	<div class="container">
 		<h4>Or Register</h4>
 		<form action="" method="post" class="form-horizontal">
