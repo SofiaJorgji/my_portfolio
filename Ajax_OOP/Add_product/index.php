@@ -91,20 +91,18 @@
 						if($result1)
 						{
 							foreach ($result1 as $row) 
-							{
-							$var_id=$row['prod_id'];
-						?>
-							<tr class='deleting'>
-								<td><?=$row['prod_name']; ?></td>
-								<td><?=$row['category_name']; ?></td>
-								<td><?=$row['prod_description']; ?></td>
-								<td class="del">
-									<form class="delete_prod" action="process.php" method="post">
-										<a href="" class="delete_button">delete</a>
-										<input type="hidden" name="delete_prod" value="<?=$row['prod_id']; ?>">
-									</form>
-								</td>
-							</tr>						
+							{ ?>
+								<tr class='deleting'>
+									<td><?=$row['prod_name']; ?></td>
+									<td><?=$row['category_name']; ?></td>
+									<td><?=$row['prod_description']; ?></td>
+									<td class="del">
+										<form class="delete_prod" action="process.php" method="post">
+											<a href="" class="delete_button">delete</a>
+											<input type="hidden" name="delete_prod" value="<?=$row['prod_id']; ?>">
+										</form>
+									</td>
+								</tr>						
 						<?php } }?>
 					</tbody>
 				</table><br>

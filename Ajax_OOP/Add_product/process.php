@@ -3,7 +3,7 @@
 	require("catalog.php");
 	$cat = new Catalog();
 
-	if(isset($_POST['action']) && $_POST['action']="add_prod")
+	if(isset($_POST['action']) && $_POST['action'] = "add_prod")
 	{
 		if(empty($_POST['product_name']) || empty($_POST['prod_desc']))
 		{

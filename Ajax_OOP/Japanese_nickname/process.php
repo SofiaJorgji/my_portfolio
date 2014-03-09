@@ -2,13 +2,13 @@
 
 function to_ninja($name)
 {
-	$map =array(
+	$map = array(
 	"A" => "ka","B"=>"tu","C"=>"mi","D"=>"te","E"=>"ku","F"=>"lu","G"=>"ji","H"=>"ri",
 	"I"=>"ki","J"=>"zu","K"=>"me","L"=>"ta","M"=>"rin","N"=>"to","O"=>"mo","P"=>"no",
 	"Q"=>"ke","R"=>"shi","S"=>"ari","T"=>"chi","U"=>"do","V"=>"ru","W"=>"mei","X"=>"na",
 	"Y"=>"fu","Z"=>"zi"," "=>" ");
 
-	$ninja="";
+	$ninja = "";
 	$arr = str_split(strtoupper($name));
 	foreach($arr as $letter)
 	{
@@ -19,17 +19,16 @@ function to_ninja($name)
 
 if(isset($_POST['your_name']))
 {
-
 	if(empty($_POST['your_name']))
 	{
-	 	$data['status']=false;
+	 	$data['status'] = false;
 	 	$data['error'] = "Please enter a name";
 	}
 	else
 	{
- 		$data['status']=true;
+ 		$data['status'] = true;
  		$ninja = to_ninja($_POST['your_name']);
- 		$data['output']="<form id='out_name' action='process.php' method='post'>
+ 		$data['output'] = "<form id='out_name' action='process.php' method='post'>
 			<div>
 				<h1>Your ninja name is: ". $ninja . "</h1>
 			</div>
