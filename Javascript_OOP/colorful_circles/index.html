@@ -7,7 +7,7 @@
 		body{
 			background-color:black;
 		}
-		</style>
+	</style>
 </head>
 <body>
 	<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"></svg>
@@ -29,11 +29,11 @@
 			{ cx: cx,
 			  cy: cy,
 			  r:  r,
-			  id: 'circle_'+counter,
+			  id: 'circle_' + counter,
 			  style: style
 			});
 
-		circles['circle_'+counter] = { radius: r , myclr: clr };
+		circles['circle_' + counter] = { radius: r , myclr: clr };
 		counter++;
 		document.getElementById('svg').appendChild(circle);
 	}

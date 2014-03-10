@@ -66,13 +66,13 @@
 					<tbody>
 						<?php
 						foreach ($records as $object) 
-						{   ?>
+						{ ?>
 							<tr>
 								<td class="name1"><p><?=$object->name; ?></p></td>
 								<td class="desc1"><p><?=$object->description; ?></p></td>
 								<td><?=$object->created_at; ?></td>
 								<td class="edit_rec">
-									<a href="#" class="edit_form">Edit</a>
+									<a href="" class="edit_form">Edit</a>
 									<form action='' method='post'>
 										<input type="hidden" class="rec_id" name="rec_id" value="<?= $object->id ;?>">
 									</form>

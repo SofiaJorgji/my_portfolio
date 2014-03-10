@@ -33,12 +33,12 @@ class Course extends CI_Controller {
 		}
 		if(isset($post_data['delete_form']) && $post_data['delete_form'] === 'remove')
 		{
-			$rec_id=$post_data['remove_rec'];
+			$rec_id = $post_data['remove_rec'];
 			$this->User_model->delete_entry($rec_id);
 		}		
 		if(isset($post_data['update']) && $post_data['update'] === 'submit')
 		{
-			$rec_id=$post_data['rec_id'];
+			$rec_id = $post_data['rec_id'];
 			$data = array(
 					'name' => $post_data['course_name'],
 					'description' => $post_data['description'],
