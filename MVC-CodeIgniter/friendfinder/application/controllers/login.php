@@ -230,8 +230,6 @@ class Login extends CI_Controller {
 	{		
 		$this->user_session['page'] = 'login';
 		$this->index();
-
-
 	}
 	
 	protected function is_login()
