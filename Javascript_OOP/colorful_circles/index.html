@@ -60,8 +60,14 @@
         var width = document.body.clientWidth;
         var height = document.body.clientHeight;
         var clr = [ Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255)];
-        if(flag == 1) { createCircle(Math.random()*width, Math.random()*height, 15, clr); }
-        if(flag == 2) {createCircle(x, y, 15, clr); }
+        if(flag == 1)
+        { 
+        	createCircle(Math.random()*width, Math.random()*height, 15, clr); 
+        }
+        if(flag == 2) 
+        {
+        	createCircle(x, y, 15, clr); 
+        }
     	updateCircles();	
     }
     document.onclick = function(e){mainLoop(e.clientX,e.clientY,2);};

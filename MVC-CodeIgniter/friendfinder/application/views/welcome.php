@@ -54,7 +54,6 @@
 				<?php
 				foreach ($users as $value) 
 				{  
-					//var_dump($value);
 					if($user['user_id'] !== $value[0]->id && $value[1] !== 1) 
 					{?>
 						<tr>

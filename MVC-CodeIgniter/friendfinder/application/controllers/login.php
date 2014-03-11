@@ -153,7 +153,6 @@ class Login extends CI_Controller {
 				$this->User_model->notify_friend($post_data['friend_id'], $this->user_session['user_id']);
 			}
 
-
 			if(isset($post_data['accept_form']) && $post_data['accept_form'] === 'accept')
 			{
 				$this->User_model->add_friend($post_data['new_fr_id'], $this->user_session['user_id']);
@@ -167,21 +166,21 @@ class Login extends CI_Controller {
 
 			$notifications = $this->User_model->get_notifications($this->user_session['user_id']);
 			$notes = $notifications->result();
-			$view_data['notes']=$notes;
+			$view_data['notes'] = $notes;
 
 			$records = $this->User_model->get_all();	
 			$record_result = $records->result();
 			$recs['users'] = array();
-			$nfriends=0;
+			$nfriends = 0;
 			foreach ($record_result as $value) 
 			{
 				$check1 = $this->User_model->check_friend($this->user_session['user_id'], $value->id);
-				$tmp1=$check1->result();
+				$tmp1 = $check1->result();
 				if(empty($tmp1))
 				{
 					$flag = -1;
 					$check2 = $this->User_model->check_notified($this->user_session['user_id'], $value->id);
-					$tmp2=$check2->result();
+					$tmp2 = $check2->result();
 					if(empty($tmp2))
 					{
 						$flag = 0;
@@ -193,7 +192,7 @@ class Login extends CI_Controller {
 					$flag = 1;
 				}
 				$check3 = $this->User_model->check_notified($value->id,$this->user_session['user_id']);
-				$tmp3=$check3->result();
+				$tmp3 = $check3->result();
 				if(!empty($tmp3))
 				{
 					$flag = 1;
@@ -202,7 +201,7 @@ class Login extends CI_Controller {
 				array_push($recs['users'], $temp);	
 			}
 			$view_data['nfriends'] = $nfriends;
-			$view_data['user']= $this->user_session;
+			$view_data['user'] = $this->user_session;
 			$view_data['users'] = $recs['users'];
 			$this->load->view('welcome', $view_data);			
 		}
@@ -217,14 +216,13 @@ class Login extends CI_Controller {
 			$this->load->model('User_model');
 			$records = $this->User_model->get_friends($this->user_session['user_id']);
 			$friends = $records->result();
-			$view_data['friends']=$friends;
-			$view_data['user']= $this->user_session;
+			$view_data['friends'] = $friends;
+			$view_data['user'] = $this->user_session;
 			$this->load->view('friends_view', $view_data);
 		}
 		else
 			redirect(base_url());
 	}
-
 
 	public function login_page()
 	{		
