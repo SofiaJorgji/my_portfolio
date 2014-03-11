@@ -13,9 +13,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{	
-		$post_data = $this->input->post();
-		// var_dump($post_data);
-		
+		$post_data = $this->input->post();		
 		if($this->is_login())
 			redirect(base_url('/login/welcome'));
 		else
@@ -55,14 +53,6 @@ class Login extends CI_Controller {
 		{
 			$this->load->view('register_view', $this->view_data);
 		}
-//		if(!isset($this->view_data['success_message']) && isset() $this->user_session['page'] !== 'login')
-//		{
-//			$this->load->view('register_view', $this->view_data);
-//		}	
-//		else if($this->user_session['page'] === 'login')
-//		{
-//			$this->load->view('login_view', $this->view_data);
-//		}
 	}
 	
 	protected function user_login()
@@ -160,14 +150,12 @@ class Login extends CI_Controller {
 
 			if(isset($post_data['action']) && $post_data['action'] === 'add_friend')
 			{
-				//var_dump($post_data);
 				$this->User_model->notify_friend($post_data['friend_id'], $this->user_session['user_id']);
 			}
 
 
 			if(isset($post_data['accept_form']) && $post_data['accept_form'] === 'accept')
 			{
-				//var_dump($post_data);
 				$this->User_model->add_friend($post_data['new_fr_id'], $this->user_session['user_id']);
 				$this->User_model->delete_notification($this->user_session['user_id'],$post_data['new_fr_id']);
 			}
@@ -180,7 +168,6 @@ class Login extends CI_Controller {
 			$notifications = $this->User_model->get_notifications($this->user_session['user_id']);
 			$notes = $notifications->result();
 			$view_data['notes']=$notes;
-			//var_dump($notes);
 
 			$records = $this->User_model->get_all();	
 			$record_result = $records->result();
@@ -241,8 +228,6 @@ class Login extends CI_Controller {
 
 	public function login_page()
 	{		
-		// var_dump($this->view_data);	
-		//$this->load->view('login_view', $this->view_data);
 		$this->user_session['page'] = 'login';
 		$this->index();
 
@@ -251,7 +236,6 @@ class Login extends CI_Controller {
 	
 	protected function is_login()
 	{
-		// var_dump($this->user_session);
 		if(isset($this->user_session['is_logged_in']) && $this->user_session['is_logged_in'] && is_numeric($this->user_session['user_id']))
 			return TRUE;
 		else
