@@ -673,11 +673,11 @@ function Enemy() {
 				}
 				if (this.y > this.bottomEdge)
 				{
-					this.y = this.topEdge - this.height + 1 ;
+					this.y = this.topEdge - this.height + 1;
 				}
 				else if (this.y < this.topEdge - this.height) 
 				{
-					this.y = this.bottomEdge ;
+					this.y = this.bottomEdge;
 				}		
 	 		}
 		}	
@@ -804,7 +804,9 @@ function Game() {
 			this.gameOverAudio.volume = .75;
 			this.gameOverAudio.load();
 			this.anim = 0;
-			this.checkAudio = window.setInterval(function(){checkReadyState()},1000);
+			this.checkAudio = window.setInterval(function(){
+				checkReadyState()
+			},1000);
 		}
 	};	
 	this.spawnWave = function(condition) {
@@ -907,7 +909,9 @@ function Game() {
 			}
 
 			document.getElementById('next-life').style.display = "block";
-			setTimeout(function(){document.getElementById('next-life').style.display = "none";},1500);
+			setTimeout(function(){
+				document.getElementById('next-life').style.display = "none";
+			},1500);
         	window.setTimeout(animate, 1500);					
 		}
 	};
@@ -923,10 +927,12 @@ function Game() {
 		this.gameOverAudio.play();
 		document.getElementById('game-end').style.display = "block";
 		window.setInterval(function(){
-		game.background.draw();
-		game.bg2.draw();
-		game.ship.move();game.boss.bulletPool.animate();
-		game.ship.bulletPool.animate();}, 1000 / 60);
+			game.background.draw();
+			game.bg2.draw();
+			game.ship.move();
+			game.boss.bulletPool.animate();
+			game.ship.bulletPool.animate();
+		}, 1000 / 60);
 	};
 }
 
@@ -938,7 +944,7 @@ function checkReadyState() {
 		if(ENTER) 
 		{
 			window.clearInterval(game.checkAudio);
-			ENTER=false;
+			ENTER = false;
 			game.start(); 
 		}
 	}
@@ -1004,7 +1010,9 @@ function animate()
 		game.spawnWave();
 		document.getElementById('level').innerHTML = "<br>" + "LEVEL" + game.level;
 		document.getElementById('level-up').style.display = "block";
-		setTimeout(function(){document.getElementById('level-up').style.display = "none";}, 1500);
+		setTimeout(function(){
+			document.getElementById('level-up').style.display = "none";
+		}, 1500);
 	}
 	if (game.ship.alive) 
 	{

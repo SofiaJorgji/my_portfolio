@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="/portfolio/MVC-CodeIgniter/friendfinder/assets/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="/portfolio/MVC-CodeIgniter/friendfinder/assets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 	<title>Welcome</title>
 </head>
 <body>
