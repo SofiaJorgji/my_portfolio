@@ -50,22 +50,16 @@
 			$query_students = "INSERT INTO students (first_name, last_name, email, pic_url, created_at)
 							   VALUES('".$post['first_name']."', '".$post['last_name']."', '".$post['email']."', '".$file_path."', NOW())";
 			$student_result = mysqli_query($connection, $query_students);		
-			
 			if($student_result)
 			{
 				$student_id = mysqli_insert_id($connection);
-
 				if($student_id)
 				{
-			
-				//grabs the id from the last entry	
 					foreach ($_POST['rows'] as $row) 
 					{
-						
 						$query_topic = "INSERT INTO students_has_topics(topics_id, students_id)
 										VALUES($row, $student_id)";
-						$topic_results = mysqli_query($connection, $query_topic);									
-						
+						$topic_results = mysqli_query($connection, $query_topic);										
 						if($topic_results)
 						{
 							$_SESSION['success_message'] = "Congratulations you are now a member!";

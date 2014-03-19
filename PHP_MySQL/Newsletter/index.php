@@ -36,9 +36,8 @@
 			}
 			img{
 				width: 150px;
-				height: 150px
-				margin:10px;
-				
+				height: 150px;
+				margin: 10px;
 			}
 			.element_inline{
 				height:auto;
@@ -57,11 +56,8 @@
 				height:auto;
 				width:auto;
 			}
-			
 		</style>
 	</head>
-	
-
 	<body>
 		<div class="container">
 			<?php
@@ -73,7 +69,6 @@
 					echo $value.'<br>';		
 				}
 			}
-			//added a success message here
 			echo (isset($_SESSION['success_message']) ? $_SESSION['success_message'] : "");
 			?>		
 			<h1>Register for our Newsletter!</h1>
@@ -105,24 +100,24 @@
 				foreach ($rows as $row) 
 				{
 					echo "<div class='well'>";
-					$query_students = "SELECT topics.name, students.id, students.first_name, students.last_name, students.email, students.pic_url
-									   FROM students
-									   LEFT JOIN students_has_topics ON students.id = students_has_topics.students_id
-									   LEFT JOIN topics ON students_has_topics.topics_id = topics.id
-									   WHERE students_has_topics.topics_id =" . $row['id'];
-									   
-					$student_profiles = fetchAll($connection, $query_students);
-					echo '<h3>'.$row['name'] . '</h3>';
+						$query_students = "SELECT topics.name, students.id, students.first_name, students.last_name, students.email, students.pic_url
+										   FROM students
+										   LEFT JOIN students_has_topics ON students.id = students_has_topics.students_id
+										   LEFT JOIN topics ON students_has_topics.topics_id = topics.id
+										   WHERE students_has_topics.topics_id =" . $row['id'];
+										   
+						$student_profiles = fetchAll($connection, $query_students);
+						echo '<h3>'.$row['name'] . '</h3>';
 
-					foreach ($student_profiles as $profile) 
-					{	?>
-						<div class="element_inline left">
-							<img src="<?= $profile['pic_url'] ?>" >
-							<p><?= $profile['first_name'] . " " . $profile['last_name'] ?></p>
-							<p><?= $profile['email'] ?></p>
-						</div>
-<?php				}	?>
-						<div class='clearfix'></div>
+						foreach ($student_profiles as $profile) 
+						{	?>
+							<div class="element_inline left">
+								<img src="<?= $profile['pic_url'] ?>" >
+								<p><?= $profile['first_name'] . " " . $profile['last_name'] ?></p>
+								<p><?= $profile['email'] ?></p>
+							</div>
+	<?php				}	?>
+							<div class='clearfix'></div>
 					</div>
 <?php			} ?>
 			</div>
