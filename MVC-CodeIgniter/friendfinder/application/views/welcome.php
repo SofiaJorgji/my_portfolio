@@ -10,7 +10,7 @@
 
 <div id="wrapper">
 	<a href="<?= base_url('/login/logout') ?>" class="close">Logout</a>
-	<h3> Welcome <?= $user['first_name']. '!' ?></h3>
+	<h3> Welcome <?=$user['first_name']. '!' ?></h3>
 	<h4> You have <a href="<?= base_url('/login/friends_page') ?>"><?= $nfriends; ?> friends</a></h4>
 	<div class="notifications">
 		<h3>Notifications:</h3>

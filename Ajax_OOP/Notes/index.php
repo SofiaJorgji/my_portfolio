@@ -51,7 +51,6 @@
 								alert(data.message);
 							}
 						}, "json");
-
 					return false;
 				});
 

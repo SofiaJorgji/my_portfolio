@@ -39,10 +39,8 @@ class Login extends CI_Controller {
 				else
 				{
 					$this->view_data['error_message'] = $register_user['error_message'];
-				}
-				
+				}		
 			}
-			
 			$this->view_data['submitted_form'] = $post_data["form_action"];
 		}	
 		if(isset($this->user_session['page']) && $this->user_session['page'] === 'login')

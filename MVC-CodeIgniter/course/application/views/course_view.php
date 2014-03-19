@@ -24,11 +24,9 @@
 				var link = $(this);
 				sib_form = link.siblings('form');
 				var rec_id = sib_form.children('input').val();
-				console.log(rec_id);
 				var mytd = link.parent();
 				var name1 = mytd.siblings('.name1').children('textarea');
 				var nam = name1.val();
-				console.log(nam);
 				var desc1 = mytd.siblings('.desc1').children('textarea');
 				var des = desc1.val();
 				console.log(des);
@@ -78,10 +76,10 @@
 									</form>
 				    			</td>
 								<td class="remove">
-									<form id="b<?= $object->id; ?>" action="" method="post">
+									<form id="b<?=$object->id; ?>" action="" method="post">
 										<input type="hidden" name="delete_form" value="remove">
-				    					<a href="#" onclick="document.getElementById('b<?= $object->id; ?>').submit();">Remove</a>
-				    					<input type="hidden" name="remove_rec" value="<?= $object->id;?>"/>
+				    					<a href="#" onclick="document.getElementById('b<?=$object->id; ?>').submit();">Remove</a>
+				    					<input type="hidden" name="remove_rec" value="<?=$object->id;?>"/>
 									</form>
 								</td>	
 							</tr>								
