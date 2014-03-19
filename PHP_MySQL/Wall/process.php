@@ -24,7 +24,7 @@
 		if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
 			$_SESSION['errors'][] = "Invalid Email";
 		if(empty($_POST['password']))
-			$_SESSION['errors'][] = "Password Field is requried";
+			$_SESSION['errors'][] = "Password Field is required";
 		if(empty($_POST['confirm_password']))
 			$_SESSION['errors'][] = "Confirm Password Field is required";
 		if($_POST['password'] != $_POST['confirm_password'])
@@ -50,20 +50,18 @@
 						"email" => $_POST['email'],
 						"logged_in" => TRUE
 					);
-
 					$_SESSION['user'] = $user;
-					// echo 'HI';
 					header('Location: wall.php');
 				}
 				else
 				{
-					$_SESSION['errors'][] = "Someting went wrong. Please check database connection.";
+					$_SESSION['errors'][] = "Something went wrong. Please check database connection.";
 					header('Location: index.php');					
 				}
 			}
 			else
 			{
-				$_SESSION['errors'][] = "Email address already exist!";
+				$_SESSION['errors'][] = "Email address already exists!";
 				header('Location: index.php');				
 			}
 		}
@@ -81,12 +79,10 @@
 			$_SESSION['errors'][] = "Invalid Email";
 		if(empty($_POST['password']))
 			$_SESSION['errors'][] = "Password Field is requried";
-
 		if(empty($_SESSION['errors']))
 		{
 			$check_user = "SELECT * FROM users WHERE email = '". $_POST['email'] ."' AND password = '". md5($_POST['password']) . "' ";
-			$user = fetch_record($connection, $check_user);
-			
+			$user = fetch_record($connection, $check_user);			
 			if($user == false)
 			{
 				$_SESSION['errors'][] = "Invalid email and password combination.";
@@ -97,14 +93,12 @@
 				$user += array(
 					"logged_in" => TRUE
 				);
-
 				$_SESSION['user'] = $user;
 				header('Location: wall.php');		
 			}
 		}
 		else
 			header('Location: index.php');
-
 		exit();
 	}
 
@@ -144,7 +138,9 @@
 			$insert_comment = mysqli_query($connection, $insert_comment_query);
 
 			if($insert_comment == TRUE)
+			{
 				$_SESSION['notifications'][] = "New comment inserted";
+			}
 			else
 				$_SESSION['errors'][] = "Cannot comment right now. Please check database connection.";
 		}
