@@ -31,6 +31,7 @@
 						}, "json");
 					return false;
 				});
+				 //json used for transferring data
 
 				$("#notes").on("submit", "form.edit_note", function()
 				{
